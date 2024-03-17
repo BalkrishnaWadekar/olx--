@@ -4,7 +4,7 @@ export const signupUserAction = userData => async dispatch => {
     console.log(userData);
     try {
         dispatch({ type: USER_SIGNUP_REQUEST })
-        const { data } = await axios.post("http://localhost:5000/api/user/signup", userData)
+        const { data } = await axios.post("https://olx-express-backend.vercel.app/api/user/signup", userData)
         dispatch({ type: USER_SIGNUP_SUCCESS })
         console.log(data);
     } catch (error) {
@@ -22,7 +22,7 @@ export const signinUserAction = credential => async dispatch => {
     console.log(credential);
     try {
         dispatch({ type: USER_SIGNIN_REQUEST })
-        const { data: { result } } = await axios.post("http://localhost:5000/api/auth/login", credential)
+        const { data: { result } } = await axios.post("https://olx-express-backend.vercel.app/api/auth/login", credential)
         console.log(result);
         dispatch({ type: USER_SIGNIN_SUCCESS, payload: result })
         localStorage.setItem("signInData", JSON.stringify(result))
@@ -34,7 +34,7 @@ export const signinUserAction = credential => async dispatch => {
 export const getAllUsersAction = () => async dispatch => {
     try {
         dispatch({ type: GET_ALL_USERS_REQUEST })
-        const { data: { result } } = await axios.get("http://localhost:5000/api/user/getallusers")
+        const { data: { result } } = await axios.get("https://olx-express-backend.vercel.app/api/user/getallusers")
         console.log(result);
         dispatch({ type: GET_ALL_USERS_SUCCESS, payload: result })
     } catch (error) {
@@ -45,7 +45,7 @@ export const getAllUsersAction = () => async dispatch => {
 export const deleteSingleUserAction = userId => async dispatch => {
     try {
         dispatch({ type: DELETE_SIGNLE_USER_REQUEST })
-        const { data: { result } } = await axios.delete(`http://localhost:5000/api/user/delete/${userId}`)
+        const { data: { result } } = await axios.delete(`https://olx-express-backend.vercel.app/api/user/delete/${userId}`)
         console.log(result);
         dispatch({ type: DELETE_SIGNLE_USER_SUCCESS })
     } catch (error) {

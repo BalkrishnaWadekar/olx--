@@ -148,7 +148,7 @@ export default function OlxNav() {
     return <>
         <ToastContainer />
         {/* {JSON.stringify(adminLoginData)} */}
-        <Nav style={{backgroundColor : '#d21ecc'}} className="justify-content-between sticky-top olx-Navbar navShadow" activeKey="/home">
+        <Nav style={{ backgroundColor: '#d21ecc' }} className="justify-content-between sticky-top olx-Navbar navShadow" activeKey="/home">
             {
 
                 adminLoginData
@@ -321,7 +321,7 @@ export default function OlxNav() {
                                     <div className="row">
                                         <div className='d-flex'>
                                             <div className="col-md-6">
-                                                <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={280} height={180} />
+                                                <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={280} height={180} />
                                             </div>
                                             <div className="col-md-6 p-3">
                                                 <div className='mt-2'>
@@ -354,7 +354,7 @@ export default function OlxNav() {
                                 <Card.Body className='d-flex'>
                                     <div className="row">
                                         <div className="col-md-7">
-                                            <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={286} height={180} />
+                                            <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={286} height={180} />
                                         </div>
                                         <div className="col-md-5">
                                             <div className='mt-2'>
@@ -378,7 +378,7 @@ export default function OlxNav() {
                                 <Card.Body className='d-flex'>
                                     <div className="row">
                                         <div className="col-md-7">
-                                            <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={286} height={180} />
+                                            <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={286} height={180} />
                                         </div>
                                         <div className="col-md-5">
                                             <div className='mt-2'>
@@ -435,7 +435,7 @@ export default function OlxNav() {
                                 <Card.Body className='d-flex'>
                                     <div className="row">
                                         <div className="col-md-7">
-                                            <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={286} height={180} />
+                                            <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={286} height={180} />
                                         </div>
                                         <div className="col-md-5">
                                             <div className='mt-2'>
@@ -519,7 +519,7 @@ export default function OlxNav() {
                                     <Card.Body className='d-flex'>
                                         <div className="row">
                                             <div className="col-md-8">
-                                                <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={286} height={180} className="rounded-1" />
+                                                <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={286} height={180} className="rounded-1" />
                                             </div>
                                             <div className="col-md-4">
                                                 <div className='mx-1'>

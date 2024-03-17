@@ -27,7 +27,7 @@ export default function ProductDetail() {
         <div className="container">
             <div className="row">
                 <div className='col-sm-6 offset-sm-3 mt-2'>
-                    <img src={`http://localhost:5000/${productInfo?.productImage}`} alt={productInfo.productName} height={430} className="rounded-3" />
+                    <img src={`https://olx-express-backend.vercel.app/${productInfo?.productImage}`} alt={productInfo.productName} height={430} className="rounded-3" />
 
                     <div>
                         <h5>Name : <span className='h3 text-dark'>{productInfo.productName}</span></h5>

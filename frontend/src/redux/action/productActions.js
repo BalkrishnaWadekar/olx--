@@ -5,7 +5,7 @@ export const getAllProductAction = () => async (dispatch, getState) => {
     try {
         dispatch({ type: GET_ALL_PRODUCT_REQUEST })
 
-        const { data: { result } } = await axios.get("http://localhost:5000/api/product/getall")
+        const { data: { result } } = await axios.get("https://olx-express-backend.vercel.app/api/product/getall")
         console.log("allproducts : " + result);
 
         dispatch({ type: GET_ALL_PRODUCT_SUCCESS, payload: result })
@@ -28,7 +28,7 @@ export const addProductAction = productData => async (dispatch, getState) => {
             }
         }
         console.log(getState());
-        const { data: { result } } = await axios.post("http://localhost:5000/api/product/add", productData, config)
+        const { data: { result } } = await axios.post("https://olx-express-backend.vercel.app/api/product/add", productData, config)
         console.log(result);
         dispatch({ type: ADD_PRODUCT_SUCCESS, payload: result })
     } catch (error) {
@@ -41,7 +41,7 @@ export const getDataToProductVerification = () => async (dispatch, getState) => 
     try {
         dispatch({ type: GET_DATA_PRODUCT_VERIFICATION_REQUEST })
 
-        const { data: { result } } = await axios.get("http://localhost:5000/api/product/gettoverify")
+        const { data: { result } } = await axios.get("https://olx-express-backend.vercel.app/api/product/gettoverify")
         console.log("verifyProducts : " + result);
 
         dispatch({ type: GET_DATA_PRODUCT_VERIFICATION_SUCCESS, payload: result })
@@ -56,7 +56,7 @@ export const adminProductControll = (Id, method) => async (dispatch, getState) =
         console.log(method);
         dispatch({ type: ADMIN_PRODUCT_CONTROL_METHOD_REQUEST })
 
-        const { data: { result } } = await axios.put(`http://localhost:5000/api/product/admincontrols/${Id}`, { method })
+        const { data: { result } } = await axios.put(`https://olx-express-backend.vercel.app/api/product/admincontrols/${Id}`, { method })
         console.log("verifyProducts : " + result);
 
         dispatch({ type: ADMIN_PRODUCT_CONTROL_METHOD_SUCCESS, payload: result })
@@ -70,7 +70,7 @@ export const getAllRejectedProducts = () => async (dispatch, getState) => {
     try {
         dispatch({ type: GET_ALL_REJECTED_PRODUCTS_REQUEST })
 
-        const { data: { result } } = await axios.get("http://localhost:5000/api/product/all/rejected")
+        const { data: { result } } = await axios.get("https://olx-express-backend.vercel.app/api/product/all/rejected")
         console.log("allRejectedProducts : " + result);
 
         dispatch({ type: GET_ALL_REJECTED_PRODUCTS_SUCCESS, payload: result })
@@ -84,7 +84,7 @@ export const getAllVerifiedProducts = () => async (dispatch, getState) => {
     try {
         dispatch({ type: GET_ALL_VERIFIED_PRODUCTS_REQUEST })
 
-        const { data: { result } } = await axios.get("http://localhost:5000/api/product/all/verified")
+        const { data: { result } } = await axios.get("https://olx-express-backend.vercel.app/api/product/all/verified")
         console.log("allVerifiedProducts : " + result);
 
         dispatch({ type: GET_ALL_VERIFIED_PRODUCTS_SUCCESS, payload: result })
@@ -99,7 +99,7 @@ export const getRejectedProductsUserwise = userId => async (dispatch, getState) 
     try {
         dispatch({ type: GET_REJECTED_PRODUCTS_OF_USER_REQUEST })
 
-        const { data: { result } } = await axios.get(`http://localhost:5000/api/product/rejected/userwise/${userId}`)
+        const { data: { result } } = await axios.get(`https://olx-express-backend.vercel.app/api/product/rejected/userwise/${userId}`)
         console.log("getRejectedProductsUserwise : ", result);
 
         dispatch({ type: GET_REJECTED_PRODUCTS_OF_USER_SUCCESS, payload: result })
@@ -114,7 +114,7 @@ export const AddToCartAction = cartData => async (dispatch, getState) => {
     try {
         dispatch({ type: ADD_TO_CART_REQUEST })
 
-        const { data: { result } } = await axios.post("http://localhost:5000/api/cart/additem", cartData)
+        const { data: { result } } = await axios.post("https://olx-express-backend.vercel.app/api/cart/additem", cartData)
 
         console.log("cardAddedItems : ", result);
 
@@ -129,7 +129,7 @@ export const getCartItemsAction = userId => async (dispatch, getState) => {
     try {
         dispatch({ type: GET_CART_ITEMS_REQUEST })
 
-        const { data: { result } } = await axios.get(`http://localhost:5000/api/cart/getcartitems/${userId}`)
+        const { data: { result } } = await axios.get(`https://olx-express-backend.vercel.app/api/cart/getcartitems/${userId}`)
 
         console.log("getCartItems : ", result);
 
@@ -144,7 +144,7 @@ export const removeFromCart = productId => async (dispatch, getState) => {
     try {
         console.log(productId);
         dispatch({ type: REMOVE_CART_ITEMS_REQUEST })
-        const { data: { result } } = await axios.get(`http://localhost:5000/api/cart/removecartitems/${productId}`)
+        const { data: { result } } = await axios.get(`https://olx-express-backend.vercel.app/api/cart/removecartitems/${productId}`)
 
         console.log("getCartItems : ", result);
 
@@ -160,7 +160,7 @@ export const placeOrderAction = orderData => async (dispatch, getState) => {
     try {
         console.log(orderData);
         dispatch({ type: PLACE_ORDER_REQUEST })
-        const { data } = await axios.post("http://localhost:5000/api/orders/placeorder", orderData)
+        const { data } = await axios.post("https://olx-express-backend.vercel.app/api/orders/placeorder", orderData)
         console.log(data);
         // console.log("orderPaced Items : ", result);
 
@@ -176,7 +176,7 @@ export const cartDataRAO = dataRAO => async (dispatch, getState) => {
     try {
         console.log(dataRAO);
         dispatch({ type: CART_REMOVE_ORDERED_ITEMS_REQUEST })
-        const { data } = await axios.post("http://localhost:5000/api/cart/remove/ordered", dataRAO)
+        const { data } = await axios.post("https://olx-express-backend.vercel.app/api/cart/remove/ordered", dataRAO)
         console.log(data);
         // console.log("orderPaced Items : ", result);
 
@@ -192,7 +192,7 @@ export const userOrderedItems = (userId, method) => async (dispatch) => {
     try {
         // console.log(dataRAO);
         dispatch({ type: GET_USER_ORDERED_ITEMS_REQUEST })
-        const { data: { result } } = await axios.get(`http://localhost:5000/api/orders/get/ofuser/${userId}`, method)
+        const { data: { result } } = await axios.get(`https://olx-express-backend.vercel.app/api/orders/get/ofuser/${userId}`, method)
         console.log(result);
         dispatch({ type: GET_USER_ORDERED_ITEMS_SUCCESS, payload: result })
 
@@ -206,7 +206,7 @@ export const receivedOrdersActions = (userId, method) => async (dispatch) => {
     try {
         // console.log(dataRAO);
         dispatch({ type: GET_RECEIVED_ORDERS_REQUEST })
-        const { data: { result } } = await axios.get(`http://localhost:5000/api/orders/received/${userId}`, method)
+        const { data: { result } } = await axios.get(`https://olx-express-backend.vercel.app/api/orders/received/${userId}`, method)
         console.log(result);
         dispatch({ type: GET_RECEIVED_ORDERS_SUCCESS, payload: result })
 
@@ -220,7 +220,7 @@ export const editRejectedProduct = (productId, data) => async (dispatch) => {
     try {
         // console.log(dataRAO);
         dispatch({ type: EDIT_REJ_PRODUCT_REQUEST })
-        const { data: { result } } = await axios.put(`http://localhost:5000/api/product/edit/rejected/${productId}`, data)
+        const { data: { result } } = await axios.put(`https://olx-express-backend.vercel.app/api/product/edit/rejected/${productId}`, data)
         console.log(result);
         dispatch({ type: EDIT_REJ_PRODUCT_SUCCESS })
 
@@ -233,7 +233,7 @@ export const getUserProducts = userId => async (dispatch) => {
     try {
         // console.log(dataRAO);
         dispatch({ type: GET_USER_PRODUCTS_REQUEST })
-        const { data: { result } } = await axios.get(`http://localhost:5000/api/product/user/${userId}`)
+        const { data: { result } } = await axios.get(`https://olx-express-backend.vercel.app/api/product/user/${userId}`)
         console.log(result);
         dispatch({ type: GET_USER_PRODUCTS_SUCCESS, payload: result })
 
@@ -260,7 +260,7 @@ export const deleteUserProduct = productId => async (dispatch) => {
     try {
         // console.log(dataRAO);
         dispatch({ type: DELETE_USER_PRODUCT_REQUEST })
-        const { data: { result } } = await axios.delete(`http://localhost:5000/api/product/delete/${productId}`)
+        const { data: { result } } = await axios.delete(`https://olx-express-backend.vercel.app/api/product/delete/${productId}`)
         console.log(result);
         dispatch({ type: DELETE_USER_PRODUCT_SUCCESS })
 
@@ -273,7 +273,7 @@ export const destroyUserProducts = productId => async (dispatch) => {
     try {
         // console.log(dataRAO);
         dispatch({ type: DESTROY_USER_PRODUCTS_REQUEST })
-        const { data: { result } } = await axios.delete(`http://localhost:5000/api/product/userwise/destroy/${productId}`)
+        const { data: { result } } = await axios.delete(`https://olx-express-backend.vercel.app/api/product/userwise/destroy/${productId}`)
         console.log(result);
         dispatch({ type: DESTROY_USER_PRODUCTS_SUCCESS })
 

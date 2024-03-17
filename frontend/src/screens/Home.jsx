@@ -66,7 +66,7 @@ export default function Home() {
                                 {/* style={{ height: "3px" }} */}
                                 <Card.Img
                                     onClick={() => productDetail(item)}
-                                    variant="top" src={`http://localhost:5000/${item.productImage}`} width={286} height={205} className="rounded-1" />
+                                    variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={286} height={205} className="rounded-1" />
                                 <Card.Body>
                                     {/* <Card.Title>{item.productName}</Card.Title>
                                     <Card.Text>

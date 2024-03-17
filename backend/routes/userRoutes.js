@@ -3,16 +3,16 @@ const { signUpUser, getAllUser, destroyUsers, deleteUserByAdmin } = require("../
 
 const router = express.Router()
 
-// http://localhost:5000/api/user/signup
+// https://olx-express-backend.vercel.app/api/user/signup
 router.route("/signup").post(signUpUser)
 
-// http://localhost:5000/api/user/getallusers
+// https://olx-express-backend.vercel.app/api/user/getallusers
 router.route("/getallusers").get(getAllUser)
 
-// http://localhost:5000/api/user/delete
+// https://olx-express-backend.vercel.app/api/user/delete
 router.route("/delete/:userId").delete(deleteUserByAdmin)
 
-// http://localhost:5000/api/user/destroyusers
+// https://olx-express-backend.vercel.app/api/user/destroyusers
 router.route("/destroyusers").delete(destroyUsers)
 
 module.exports = router

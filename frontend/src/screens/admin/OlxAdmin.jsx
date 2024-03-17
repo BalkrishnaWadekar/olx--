@@ -34,7 +34,7 @@ export default function OlxAdmin() {
                     <Badge bg="danger">Rejected Products</Badge>
                     {
                         allRejectedProducts?.map((item, index) => <Card style={{ width: '22rem' }} className="mx-3 my-2 d-flex shadowCard">
-                            <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={286} height={190} />
+                            <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={286} height={190} />
                             <Card.Body>
                                 <span className='text-secondary'>Product Owner : {item.productOwner}</span>
                                 <Card.Title className='text-center'>{item.productName}</Card.Title>
@@ -60,7 +60,7 @@ export default function OlxAdmin() {
                     {
 
                         verifyProducts?.map((item, index) => <Card style={{ width: '22rem' }} className="mx-3 my-2 d-flex">
-                            <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={286} height={190} />
+                            <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={286} height={190} />
                             <Card.Body>
                                 <span className='text-secondary'>Product Owner : {item.productOwner}</span>
                                 <Card.Title className='text-center'>{item.productName}</Card.Title>
@@ -91,7 +91,7 @@ export default function OlxAdmin() {
 
                     {
                         allVerifiedProducts?.map((item, index) => <Card style={{ width: '22rem' }} className="mx-3 my-2 d-flex">
-                            <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={286} height={190} />
+                            <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={286} height={190} />
                             <Card.Body>
                                 <span className='text-secondary'>Product Owner : {item.productOwner}</span>
                                 <Card.Title className='text-center'>{item.productName}</Card.Title>

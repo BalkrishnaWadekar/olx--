@@ -4,16 +4,16 @@ const { adminRegister, adminLogin, allAdminData, destroyAdmin } = require("../co
 const router = express.Router()
 
 
-//http://localhost:5000/api/admin/register
+//https://olx-express-backend.vercel.app/api/admin/register
 router.route("/register").post(adminRegister)
 
-//http://localhost:5000/api/admin/login
+//https://olx-express-backend.vercel.app/api/admin/login
 router.route("/login").post(adminLogin)
 
-//http://localhost:5000/api/admin/alldata
+//https://olx-express-backend.vercel.app/api/admin/alldata
 router.route("/alldata").get(allAdminData)
 
-//http://localhost:5000/api/admin/destroy
+//https://olx-express-backend.vercel.app/api/admin/destroy
 router.route("/destroy").delete(destroyAdmin)
 
 module.exports = router

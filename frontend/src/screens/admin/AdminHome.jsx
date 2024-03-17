@@ -45,7 +45,7 @@ export default function AdminHome() {
                         <Card style={{ width: '18rem' }} className="mx-3 my-2 bg-light shadowCard">
                             <div className="homeProducts">
                                 {/* style={{ height: "3px" }} */}
-                                <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={286} height={205} />
+                                <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={286} height={205} />
                                 <Card.Body>
                                     {/* <Card.Title>{item.productName}</Card.Title>
                                     <Card.Text>

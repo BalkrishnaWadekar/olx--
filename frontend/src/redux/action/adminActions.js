@@ -6,7 +6,7 @@ export const adminLoginAction = loginInput => async dispatch => {
         console.log(loginInput);
         dispatch({ type: ADMIN_LOGIN_REQUEST })
 
-        const { data: { result } } = await axios.post("http://localhost:5000/api/admin/login", loginInput)
+        const { data: { result } } = await axios.post("https://olx-express-backend.vercel.app/api/admin/login", loginInput)
         localStorage.setItem("adminLoginData", JSON.stringify(result))
         dispatch({ type: ADMIN_LOGIN_SUCCESS, payload: result })
 

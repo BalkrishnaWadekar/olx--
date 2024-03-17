@@ -90,7 +90,7 @@ export default function AllUsers() {
                                 <div className="row">
                                     <div className='d-flex'>
                                         <div className="col-md-6">
-                                            <Card.Img variant="top" src={`http://localhost:5000/${item.productImage}`} width={280} height={180} />
+                                            <Card.Img variant="top" src={`https://olx-express-backend.vercel.app/${item.productImage}`} width={280} height={180} />
                                         </div>
                                         <div className="col-md-6 p-3">
                                             <div className='mt-2'>
