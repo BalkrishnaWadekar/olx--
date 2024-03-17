@@ -9,13 +9,28 @@ require("dotenv").config({ path: "./config/.env" })
 const app = express()
 const { db } = require("./config/db")
 const cors = require("cors")
-db()
 
 app.use(express.static("public"))
 
 app.use(express.json())
 
-app.use(cors())
+app.use(cors(
+    {
+        origin: [""],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
+    }
+))
+
+db()
+
+const PORT = process.env.PORT
+
+app.listen(PORT, err => {
+    err && console.log("Error : ", err);
+    console.log(`SERVER IS RUNNING ON http://localhost:${PORT}`);
+})
+
 
 app.use("/api/admin", adminRoute)
 app.use("/api/user", userRoute)
@@ -24,8 +39,3 @@ app.use("/api/product", productRoute)
 app.use("/api/cart", cartRoute)
 app.use("/api/orders", ordersRoute)
 
-const PORT = process.env.PORT
-app.listen(PORT, err => {
-    err && console.log("Error : ", err);
-    console.log(`SERVER IS RUNNING ON http://localhost:${PORT}`);
-})

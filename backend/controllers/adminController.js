@@ -1,12 +1,11 @@
-const admin = require("../models/adminModel")
+const adminData = require("../models/adminModel")
 const bcrypt = require("bcryptjs")
 
 exports.adminRegister = async (req, res) => {
     try {
-        console.log("xxxx");
         const salt = await bcrypt.genSalt()
         req.body.adminPassword = await bcrypt.hash(req.body.adminPassword, salt)
-        const result = await admin.create(req.body)
+        const result = await adminData.create(req.body)
         res.json({
             success: true,
             message: "Admin registerd successfully!",
@@ -23,12 +22,13 @@ exports.adminRegister = async (req, res) => {
 exports.adminLogin = async (req, res) => {
     try {
         const { email, password } = req.body
-        const result = await admin.findOne({ adminEmail: email })
-        // console.log(result);
+        console.log(email, password);
+        const result = await adminData.findOne({ adminEmail: email })
+        console.log(result);
         if (!result) {
             return res.status(400).json({
                 success: false,
-                message: "Email is not valid!"
+                message: "Admin email is not valid!"
             })
         }
         // console.log(email, password);
